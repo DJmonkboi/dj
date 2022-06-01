@@ -18,7 +18,7 @@ import {
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import { history } from "./history";
-
+import { Banana } from "./providers/Banana";
 const App: React.FC = () => {
   const [iModelId, setIModelId] = useState(process.env.IMJS_IMODEL_ID);
   const [iTwinId, setITwinId] = useState(process.env.IMJS_ITWIN_ID);
@@ -139,6 +139,7 @@ const App: React.FC = () => {
         viewCreatorOptions={viewCreatorOptions}
         enablePerformanceMonitors={true} // see description in the README (https://www.npmjs.com/package/@itwin/desktop-viewer-react)
         theme="dark"
+         uiProviders={[new Banana()]}
       />
     </div>
   );
